@@ -1,6 +1,6 @@
 package com.dev_rus.phone_book.configuration;
 
-import com.dev_rus.phone_book.convertor.UserDtoToUserEntity;
+import com.dev_rus.phone_book.convertor.NewUserDtoToUserEntity;
 import com.dev_rus.phone_book.convertor.UserEntityToUserResource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class ConverterConfiguration {
     public ConversionServiceFactoryBean conversionServiceFactoryBean() {
         final ConversionServiceFactoryBean bean = new ConversionServiceFactoryBean();
         final Set<Converter> converters = new HashSet<>();
-        converters.add(new UserDtoToUserEntity());
+        converters.add(new NewUserDtoToUserEntity());
         converters.add(new UserEntityToUserResource());
         bean.setConverters(converters);
         return bean;

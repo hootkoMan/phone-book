@@ -1,6 +1,6 @@
 package com.dev_rus.phone_book.service;
 
-import com.dev_rus.phone_book.domain.dto.UserDto;
+import com.dev_rus.phone_book.domain.dto.NewUserDto;
 import com.dev_rus.phone_book.domain.resource.UserResource;
 import org.springframework.stereotype.Service;
 
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface UserService {
-    UserResource create(UserDto userDto);
+    UserResource create(NewUserDto newUserDto);
 }

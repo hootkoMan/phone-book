@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,11 +28,11 @@ public class UserEntity {
     @Pattern(regexp = "[A-za-z]{3,}")
     private String login;
     @NotNull
-    @Min(value = 5)
+    @Size(min = 5)
     private String password;
     @NotNull
-//    @Min(value = 5)
     @Column(name = "full_name")
+    @Size(min = 5)
     private String fullName;
     @OneToMany
     private Set<ContactEntity> contacts = new HashSet<>();

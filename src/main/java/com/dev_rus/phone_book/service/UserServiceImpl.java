@@ -1,6 +1,6 @@
 package com.dev_rus.phone_book.service;
 
-import com.dev_rus.phone_book.domain.dto.UserDto;
+import com.dev_rus.phone_book.domain.dto.NewUserDto;
 import com.dev_rus.phone_book.domain.entity.UserEntity;
 import com.dev_rus.phone_book.domain.resource.UserResource;
 import com.dev_rus.phone_book.repository.UserRepository;
@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public UserResource create(UserDto userDto) {
-        final UserEntity entity = conversionService.convert(userDto, UserEntity.class);
+    public UserResource create(final NewUserDto newUserDto) {
+        final UserEntity entity = conversionService.convert(newUserDto, UserEntity.class);
         userRepository.save(entity);
         return conversionService.convert(entity, UserResource.class);
     }

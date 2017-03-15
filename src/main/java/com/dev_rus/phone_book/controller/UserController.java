@@ -1,6 +1,6 @@
 package com.dev_rus.phone_book.controller;
 
-import com.dev_rus.phone_book.domain.dto.UserDto;
+import com.dev_rus.phone_book.domain.dto.NewUserDto;
 import com.dev_rus.phone_book.domain.resource.UserResource;
 import com.dev_rus.phone_book.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +24,8 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<UserResource> create(@RequestBody final UserDto userDto) {
-        final UserResource resource = userService.create(userDto);
+    public ResponseEntity<UserResource> create(@RequestBody final NewUserDto newUserDto) {
+        final UserResource resource = userService.create(newUserDto);
         return ResponseEntity.ok(resource);
     }
 }
