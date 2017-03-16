@@ -25,7 +25,7 @@ public class UserEntity {
     @GeneratedValue
     private Long id;
     @NotNull
-    @Pattern(regexp = "[A-za-z]{3,}")
+    @Pattern(regexp = "[A-Za-z]{3,}")
     private String login;
     @NotNull
     @Size(min = 5)

@@ -1,4 +1,4 @@
-package com.dev_rus.phone_book.service;
+package com.dev_rus.phone_book.service.user;
 
 import com.dev_rus.phone_book.domain.dto.NewUserDto;
 import com.dev_rus.phone_book.domain.resource.UserResource;
